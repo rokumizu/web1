@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>まかせてWebライト | PC版</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      background-color: #ffffff;
+      color: #0d3050;
+    }
+
+    header {
+      background-color: #e3f2fd;
+      padding: 16px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      margin: 0;
+    }
+
+    .logo-main {
+      font-weight: bold;
+      color: #1976d2;
+    }
+
+    .logo-sub {
+      font-weight: normal;
+      color: #0d3050;
+      font-style: italic;
+      margin-left: 4px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #0d3050;
+      font-weight: bold;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background-color: #1976d2;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #1976d2;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      background: url('hero.png') center/cover no-repeat;
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #ffffff;
+      padding: 60px 20px;
+    }
+
+    .hero h2 {
+      margin-bottom: 10px;
+    }
+
+    .hero-lead {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .hero-sub {
+      font-size: 1.3rem;
+      font-weight: 400;
+      font-style: italic;
+      color: #e3f2fd;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .line-btn {
+      margin-top: 20px;
+    }
+
+    .line-btn img {
+      height: 55px;
+      transition: transform 0.3s ease;
+    }
+
+    .line-btn img:hover {
+      transform: scale(1.08);
+    }
+
+    section {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 0 20px;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    h3 {
+      font-size: 1.6rem;
+      color: #0d3050;
+      border-left: 5px solid #90caf9;
+      padding-left: 12px;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .feature-box {
+      flex: 1;
+      background: #f5faff;
+      padding: 20px;
+      border-radius: 10px;
+      min-width: 280px;
+      transition: transform 0.3s ease;
+    }
+
+    .feature-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-box p {
+      margin: 0;
+    }
+
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    th, td {
+      border: 1px solid #bbdefb;
+      padding: 10px;
+      text-align: center;
+      word-wrap: break-word;
+    }
+
+    th {
+      background: #e3f2fd;
+    }
+
+    .faq p {
+      margin-bottom: 15px;
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .option-box {
+      background: #f5faff;
+      border-left: 5px solid #64b5f6;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .option-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .option-box a {
+      text-decoration: none;
+      color: #1976d2;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: #e3f2fd;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #0d3050;
+      margin-top: 40px;
+    }
+
+    /* アニメーション定義 */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1><span class="logo-main">まかせて</span><span class="logo-sub">Webライト</span></h1>
+  <nav>
+    <a href="#plans">プラン・料金</a>
+    <a href="#features">特徴</a>
+    <a href="#options">オプション</a>
+    <a href="#faq">よくある質問</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h2>
+    <span class="hero-lead">初めてのホームページ作成に</span><br>
+    <span class="hero-sub">サーバー契約なしでかんたんスタート</span>
+  </h2>
+  <div class="line-btn">
+    <a href="https://lin.ee/Y6ZPR3G" target="_blank">
+      <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="LINEで相談">
+    </a>
+  </div>
+</div>
+
+<section id="features">
+  <h3>🌟 こんな方におすすめ</h3>
+  <div class="features">
+    <div class="feature-box"><p>📱 スマホで見やすいホームページが欲しい方</p></div>
+    <div class="feature-box"><p>💬 SNSにURLを貼りたい方</p></div>
+    <div class="feature-box"><p>💰 とにかくコストを抑えて始めたい方</p></div>
+  </div>
+</section>
+
+<section id="plans">
+  <h3>💰 プラン・料金</h3>
+  <table>
+    <tr><th>内容</th><th>価格</th></tr>
+    <tr><td>ホームページ制作（1ページ）</td><td>5,000円</td></tr>
+    <tr><td>修正（1回まで）</td><td>無料</td></tr>
+    <tr><td>修正（2回目以降）</td><td>+1,000円/回</td></tr>
+    <tr><td>LINE相談</td><td>無料（無制限）</td></tr>
+  </table>
+</section>
+
+<section id="options">
+  <h3>🛠 オプション（必要な方のみ）</h3>
+  <div class="options">
+    <div class="option-box"><strong>🏢 <a href="about.html" target="_blank">2ページ目の追加制作</a></strong><br>+1,500円 / ページ</div>
+    <div class="option-box"><strong>🎞️ <a href="slider.html" target="_blank">スライダー導入</a></strong><br>+2,000円</div>
+    <div class="option-box"><strong>📨 <a href="form.html" target="_blank">問い合わせフォーム設置</a></strong><br>+2,000円</div>
+    <div class="option-box"><strong>🗺️ <a href="map.html" target="_blank">Googleマップ埋め込み</a></strong><br>+1,000円</div>
+  </div>
+</section>
+
+<section id="faq">
+  <h3>🙋 よくある質問</h3>
+  <div class="faq">
+    <p><strong>Q. サーバーって契約しなくていいの？</strong><br>
+    → はい、当サービスでは<strong>サーバー契約不要の公開方式</strong>を使うので維持費はゼロです！</p>
+    <p><strong>Q. ドメインは必要ですか？</strong><br>
+    → 独自ドメインを使わなくても専用URLで運用できます（ドメイン取得代行も対応可能です）。</p>
+    <p><strong>Q. LINEで相談ってどういうこと？</strong><br>
+    → 作成前・作成後のご相談も、すべてLINEでやりとりできます。</p>
+  </div>
+</section>
+
+<section id="contact" class="line-btn" style="text-align:center;">
+  <h3>📩 LINEでお気軽にご相談ください</h3>
+  <a href="https://lin.ee/Y6ZPR3G" target="_blank">
+    <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="LINEで相談">
+  </a>
+</section>
+
+<footer>
+  &copy; 2025 まかせてWebライト｜PC版ページ
+</footer>
+
+</body>
+</html>

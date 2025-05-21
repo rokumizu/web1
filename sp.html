@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>まかせてWebライト - スマホ版</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1976d2;
+      --light-bg: #f5faff;
+      --accent: #64b5f6;
+    }
+
+    body {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      margin: 0;
+      background: #ffffff;
+      color: #0d3050;
+    }
+
+    header {
+      background: #e3f2fd;
+      padding: 20px;
+      text-align: center;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      margin: 0;
+      animation: bounceIn 1s ease forwards;
+    }
+
+    .logo-main {
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    .logo-sub {
+      font-style: italic;
+      color: #0d3050;
+      margin-left: 4px;
+    }
+
+    .hero {
+      background: url('hero.png') center/cover no-repeat;
+      padding: 60px 20px;
+      color: #fff;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-text {
+      opacity: 0;
+      transform: translateX(-100%);
+      animation: slideInLeft 1.5s ease-out forwards;
+      animation-delay: 0.2s;
+    }
+
+    .hero h2 {
+      font-size: 1.3rem; /* ← 小さめに修正 */
+      margin-bottom: 6px;
+    }
+
+    .hero p {
+      font-size: 0.85rem; /* ← 小さめに修正 */
+      color: #e3f2fd;
+    }
+
+    section {
+      padding: 32px 20px;
+      animation: fadeInUp 0.8s ease-out;
+      border-bottom: 1px solid #eee;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      color: #0d3050;
+      border-left: 5px solid var(--accent);
+      padding-left: 12px;
+      margin-bottom: 20px;
+    }
+
+    .feature-box {
+      margin-bottom: 16px;
+      font-size: 1rem;
+      background: var(--light-bg);
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .plans {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .plan-card {
+      background: var(--light-bg);
+      border-left: 5px solid var(--accent);
+      padding: 18px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+
+    .plan-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+    }
+
+    .option-card {
+      background: var(--light-bg);
+      border-left: 5px solid var(--accent);
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+
+    .option-card:hover {
+      transform: scale(1.03);
+    }
+
+    .option-card a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .faq p {
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+
+    .line-btn {
+      text-align: center;
+      margin: 50px 0 30px;
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    .line-btn img {
+      height: 52px;
+      transition: transform 0.3s ease;
+    }
+
+    .line-btn img:hover {
+      transform: scale(1.1);
+    }
+
+    footer {
+      text-align: center;
+      background: #e3f2fd;
+      padding: 16px;
+      font-size: 0.85rem;
+      color: #0d3050;
+    }
+
+    /* アニメーション */
+    @keyframes slideInLeft {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      60% { transform: scale(1.05); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 40px 16px;
+      }
+      h3 {
+        font-size: 1.2rem;
+      }
+      .feature-box, .plan-card, .option-card {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1><span class="logo-main">まかせて</span><span class="logo-sub">Webライト</span></h1>
+</header>
+
+<div class="hero">
+  <div class="hero-text">
+    <h2>低価格でホームページを作成</h2>
+    <p>サーバー契約不要ですぐ始められます！</p>
+  </div>
+</div>
+
+<section>
+  <h3>🌟 おすすめポイント</h3>
+  <div class="feature-box">📱 スマホで見やすいサイトを作りたい方</div>
+  <div class="feature-box">💬 SNSに貼れるURLが欲しい方</div>
+  <div class="feature-box">💰 コストを抑えて始めたい方</div>
+  <div class="feature-box">🧾 通常は毎月かかるような費用（サーバーやドメイン）も、<strong>このサービスでは必要ありません！</strong></div>
+</section>
+
+<section>
+  <h3>💰 プランと料金</h3>
+  <div class="plans">
+    <div class="plan-card"><strong>📄 制作基本プラン</strong><br>1ページ制作：5,000円</div>
+    <div class="plan-card"><strong>✏️ 修正</strong><br>1回まで無料、2回目以降 +1,000円/回</div>
+    <div class="plan-card"><strong>📲 LINE相談</strong><br>無料・無制限でご相談可能</div>
+  </div>
+</section>
+
+<section>
+  <h3>🛠 オプション料金（必要な方のみ）</h3>
+  <div class="options">
+    <div class="option-card"><strong>🏢 <a href="about.html" target="_blank">2ページ目の追加制作</a></strong><br>+1,500円 / ページ</div>
+    <div class="option-card"><strong>🎞️ <a href="slider.html" target="_blank">スライダー導入</a></strong><br>+2,000円</div>
+    <div class="option-card"><strong>📨 <a href="form.html" target="_blank">問い合わせフォーム設置</a></strong><br>+2,000円</div>
+    <div class="option-card"><strong>🗺️ <a href="map.html" target="_blank">Googleマップ埋め込み</a></strong><br>+1,000円</div>
+  </div>
+</section>
+
+<section>
+  <h3>🙋 よくある質問</h3>
+  <div class="faq">
+    <p><strong>Q. サーバーは契約しないとダメ？</strong><br>
+    → いいえ、<strong>サーバー契約不要の公開方式</strong>なので維持費ゼロです！</p>
+    <p><strong>Q. ドメインは必要？</strong><br>
+    → なくても公開できます。独自ドメイン取得も相談OK！</p>
+    <p><strong>Q. 相談はどこから？</strong><br>
+    → このLINEでそのままやりとりできます！</p>
+  </div>
+</section>
+
+<section class="line-btn">
+  <a href="https://lin.ee/Y6ZPR3G" target="_blank">
+    <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="LINEで相談">
+  </a>
+</section>
+
+<footer>
+  &copy; 2025 まかせてWebライト｜スマホ版ページ
+</footer>
+
+</body>
+</html>

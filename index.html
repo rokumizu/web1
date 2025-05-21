@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>まかせてWebライト | TOP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // 画面幅に応じて自動振り分け
+    window.onload = function() {
+      if (window.innerWidth <= 768) {
+        window.location.href = "sp.html";
+      } else {
+        window.location.href = "pc.html";
+      }
+    };
+  </script>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f0f8ff;
+      color: #333;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    h1 {
+      font-size: 1.8rem;
+      color: #1976d2;
+    }
+    p {
+      font-size: 1rem;
+      margin: 20px 0;
+    }
+    a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      background: #1976d2;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+    a:hover {
+      background: #0d47a1;
+    }
+  </style>
+</head>
+<body>
+  <h1>まかせてWebライト</h1>
+  <p>数秒後に自動的にお使いの端末に最適なページへ移動します。</p>
+  <p>手動で選ぶ場合は以下からどうぞ：</p>
+  <a href="pc.html">PC版を見る</a>
+  <a href="sp.html">スマホ版を見る</a>
+</body>
+</html>

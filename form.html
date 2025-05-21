@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>問い合わせフォーム - まかせてWebライト</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      background: #f9fcff;
+      margin: 0;
+      padding: 0;
+      color: #0d3050;
+    }
+
+    header {
+      background: #e3f2fd;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.6rem;
+    }
+
+    .form-container {
+      max-width: 480px;
+      margin: 30px auto;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    button {
+      margin-top: 20px;
+      background: #1976d2;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background: #1565c0;
+    }
+
+    .note {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      text-align: center;
+      background: #e3f2fd;
+      padding: 16px;
+      font-size: 0.85rem;
+      color: #0d3050;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>📨 お問い合わせ</h1>
+</header>
+
+<div class="form-container">
+  <form action="#" method="post">
+    <label for="name">お名前</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">メールアドレス</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">お問い合わせ内容</label>
+    <textarea id="message" name="message" rows="6" required></textarea>
+
+    <button type="submit">送信する</button>
+  </form>
+  <div class="note">
+    ※送信機能は現在ダミーです。本番用にLINE連携やメール送信の実装が可能です。
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 まかせてWebライト｜問い合わせフォームページ
+</footer>
+
+</body>
+</html>
